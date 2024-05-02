@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    h1 {
+        font-size: 104px;
+        font-weight: 700;
+        line-height: 100%;
+        letter-spacing: -0.04em;
+    }
+    h2 {
+        @apply text-xl;
+    }
+
+    body {
+        letter-spacing: -0.02em;
+        @apply text-slate-800
+    }
+}
