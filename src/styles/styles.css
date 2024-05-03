@@ -4,17 +4,21 @@
 
 @layer base {
     h1 {
-        font-size: 104px;
+        @apply text-8xl;
         font-weight: 700;
         line-height: 100%;
-        letter-spacing: -0.04em;
+        letter-spacing: -0.05em;
     }
     h2 {
-        @apply text-xl;
+        @apply text-7xl;
+        font-weight: 600;
+        line-height: 100%;
+        letter-spacing: -0.05em;
     }
 
     body {
-        letter-spacing: -0.02em;
-        @apply text-slate-800
+        letter-spacing: -0.04em;
+        @apply text-slate-800;
+        @apply text-xl;
     }
 }
