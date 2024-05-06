@@ -1,0 +1,27 @@
+---
+import Layout from '@layouts/Layout.astro'
+import { Image } from 'astro:assets'
+
+const { frontmatter } = Astro.props
+---
+
+<Layout title={frontmatter.title} description={frontmatter.description}>
+    <article class="container max-w-screen-md mx-auto">
+        <Image
+            src={frontmatter.image.url}
+            alt={frontmatter.image.alt}
+            width={400}
+            height={400}
+        />
+        <span
+            >{
+                frontmatter.pubDate
+                    ? frontmatter.pubDate.toLocaleDateString()
+                    : ''
+            }</span
+        >
+        <span>{frontmatter.category}</span>
+        <h1>{frontmatter.title}</h1>
+        <slot />
+    </article>
+</Layout>

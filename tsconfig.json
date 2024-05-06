@@ -6,6 +6,8 @@
             "@components/*": ["src/components/*"],
             "@assets/*": ["src/assets/*"],
             "@layouts/*": ["src/layouts/*"]
-        }
+        },
+        "strictNullChecks": true,
+        "allowJs": true,
     }
 }

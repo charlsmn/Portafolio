@@ -1,16 +1,16 @@
 ---
 import Logo from '@assets/Logo.astro'
-import ButtonLine from './ButtonLine.astro'
-import Burger from './Burger.astro'
+import ButtonLine from './ui/ButtonLine.astro'
+import Burger from './ui/Burger.astro'
 import Section from './Section.astro'
 ---
 
-<header class="bg-white py-3 md:py-5">
+<header class="bg-white dark:bg-slate-950 py-3 md:py-5">
     <Section class="!py-0">
         <div class="flex items-center justify-between">
             <Logo color="black" />
             <div class="flex gap-4 items-center">
-                <ButtonLine href="/contact" class="hidden md:block"
+                <ButtonLine href="/contact" class="hidden md:flex"
                     >Let's Talk</ButtonLine
                 >
                 <Burger />

@@ -1,0 +1,18 @@
+---
+import { Icon } from 'astro-icon/components'
+
+export interface Props {
+    href: string
+    class?: string
+}
+
+const { href, class: className } = Astro.props
+---
+
+<a
+    href={href}
+    class=`${className} flex items-center gap-2 border border-slate-800 px-7 py-3 rounded-full font-bold text-slate-800 dark:text-slate-100 dark:border-slate-100 hover:opacity-70 transition inline-block`
+>
+    <slot />
+    <Icon name="solar:arrow-right-broken" width={24} />
+</a>
