@@ -5,11 +5,11 @@ export default {
     content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
     theme: {
         fontFamily: {
-            sans: ['Inter', ...defaultTheme.fontFamily.sans],
+            sans: ['Inter Tight Variable', ...defaultTheme.fontFamily.sans],
         },
         extend: {
             colors: {
-                'primary': '#FF3466',
+                primary: '#FF3466',
             },
         },
     },

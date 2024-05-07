@@ -7,17 +7,17 @@
         @apply text-8xl;
         font-weight: 700;
         line-height: 100%;
-        letter-spacing: -0.05em;
+        letter-spacing: -0.02em;
     }
 
     h2 {
         @apply text-7xl;
         font-weight: 600;
         line-height: 100%;
-        letter-spacing: -0.05em;
+        letter-spacing: -0.02em;
     }
 
     body {
-        letter-spacing: -0.04em;        
+        letter-spacing: -0.02em;
     }
 }
