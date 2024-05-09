@@ -1,3 +1,4 @@
+// https://astro.build/db/config
 import { defineDb, defineTable, column } from 'astro:db'
 
 const Users = defineTable({
@@ -10,7 +11,6 @@ const Users = defineTable({
     },
 })
 
-// https://astro.build/db/config
 export default defineDb({
     tables: {
         Users,

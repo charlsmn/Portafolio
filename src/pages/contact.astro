@@ -26,15 +26,13 @@ if (Astro.request.method === 'POST') {
         email,
         message,
         company
-    } 
+    }
 
     const validateData = formSchema.safeParse(contactFormData)
 
     if(validateData.success) {
         await db.insert(Users).values(validateData.data)
-
     }
-
 }
 
 ---
