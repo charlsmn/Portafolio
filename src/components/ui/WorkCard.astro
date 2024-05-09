@@ -1,0 +1,21 @@
+---
+import { Image } from 'astro:assets'
+import { Icon } from 'astro-icon/components'
+
+const { title, url, image, category } = Astro.props
+---
+
+<article>
+    <a href={url}>
+        <Image src={image.url} alt={image.alt} class="aspect-square w-full bg-slate-900 rounded-2xl"/>
+        <div class="flex items-center justify-between mt-5">
+            <div>
+                <h3 class="font-semibold text-2xl">{title}</h3>
+                <span class="text-slate-800 dark:text-slate-100 font-light">{category}</span>
+            </div>
+            <span class="border border-slate-800 px-7 py-3 rounded-full dark:border-slate-100 text-slate-800 dark:text-slate-100">
+                <Icon name="solar:arrow-right-broken" width={24} />
+            </span>
+        </div>
+    </a>
+</article>

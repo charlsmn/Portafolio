@@ -8,6 +8,8 @@ import Button from '@components/ui/Button.astro'
 import Link from '@components/ui/Link.astro'
 
 import { getCollection } from 'astro:content'
+import ButtonLine from '@components/ui/ButtonLine.astro'
+import WorkCard from '@components/ui/WorkCard.astro'
 
 const allWorks = await getCollection('works')
 ---
@@ -63,16 +65,26 @@ const allWorks = await getCollection('works')
             </div>
         </Section>
         <Section>
-            <h2>Recent projects</h2>
-            {
-                allWorks.map((work) => {
-                    return (
-                        <Link href={`/works/${work.slug}`}>
-                            {work.data.title}
-                        </Link>
-                    )
-                })
-            }
+            <h2>Discover my latest works</h2>
+            <div class="grid grid-cols-2 gap-10 mt-10">
+
+                {
+                    allWorks.map((work) => {
+                        return (
+                            <WorkCard title={work.data.title} url={`works/${work.slug}`} image={work.data.image} category={work.data.category}/>
+                        )
+                    })
+                }
+            </div>
+            <div class="text-center flex items-center w-full mx-auto justify-center mt-16">
+                <Link href="/works">View All Works</Link>
+            </div>
+        </Section>
+        <Section>
+            <div class="flex justify-between items-end">
+                <h2 class="md:max-w-screen-md">Sometimes, I also write and share some insights</h2>
+                <ButtonLine href="/blog">View All Insights</Button>
+            </div>
         </Section>
     </main>
 </Layout>
