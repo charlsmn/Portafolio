@@ -1,10 +1,18 @@
 ---
 import { db, Users } from 'astro:db';
+import { z } from 'astro:content';
 
 import Layout from "@layouts/Layout.astro"
 import Section from "@components/Section.astro"
 
 if (Astro.request.method === 'POST') {
+
+    const formSchema = z.object({
+        name: z.string(),
+        email: z.string().email(),
+        message: z.string(),
+        company: z.string(),
+    })
 
     const formData = await Astro.request.formData();
 
@@ -13,15 +21,21 @@ if (Astro.request.method === 'POST') {
     const message = formData.get('message');
     const company = formData.get('company');
 
-
-    console.log(name, email, message);
-
-    await db.insert(Users).values({ 
+    const contactFormData = {
         name,
         email,
-        company,
-        message
-    })
+        message,
+        company
+    } 
+
+    const validateData = formSchema.parse(contactFormData)
+
+    if(validateData) {
+
+        await db.insert(Users).values(validateData)
+        
+    }
+
 }
 
 ---
@@ -41,8 +55,6 @@ if (Astro.request.method === 'POST') {
             <input type="text" name="name">
             <input type="email" name="email" id="">
             <input type="text" name="company">
-            <input type="checkbox" name="services" id="" value="website">
-            <input type="checkbox" name="services" id="" value="app">
             <textarea name="message" id="" cols="30" rows="10"></textarea>
             <input type="submit" value="Send">
         </form>
