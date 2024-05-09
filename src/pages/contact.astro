@@ -1,6 +1,29 @@
 ---
+import { db, Users } from 'astro:db';
+
 import Layout from "@layouts/Layout.astro"
 import Section from "@components/Section.astro"
+
+if (Astro.request.method === 'POST') {
+
+    const formData = await Astro.request.formData();
+
+    const name = formData.get('name');
+    const email = formData.get('email');
+    const message = formData.get('message');
+    const company = formData.get('company');
+
+
+    console.log(name, email, message);
+
+    await db.insert(Users).values({ 
+        name,
+        email,
+        company,
+        message
+    })
+}
+
 ---
 
 <Layout title="Contact" description="test">
@@ -12,5 +35,16 @@ import Section from "@components/Section.astro"
             </h1>
             <p class="text-2xl ">Have a nice works? Reach out and let's chat.</p>
         </div>
+    </Section>
+    <Section>
+        <form method="POST">
+            <input type="text" name="name">
+            <input type="email" name="email" id="">
+            <input type="text" name="company">
+            <input type="checkbox" name="services" id="" value="website">
+            <input type="checkbox" name="services" id="" value="app">
+            <textarea name="message" id="" cols="30" rows="10"></textarea>
+            <input type="submit" value="Send">
+        </form>
     </Section>
 </Layout>

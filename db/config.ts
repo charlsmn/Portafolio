@@ -6,7 +6,6 @@ const Users = defineTable({
         name: column.text(),
         email: column.text(),
         company: column.text(),
-        services: column.json(),
         message: column.text(),
     },
 })
