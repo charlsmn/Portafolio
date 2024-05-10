@@ -6,6 +6,7 @@ const worksCollection = defineCollection({
         z.object({
             title: z.string(),
             pubDate: z.date(),
+            client: z.string(),
             description: z.string(),
             category: z.array(z.string()),
             image: z.object({

@@ -1,6 +1,7 @@
 ---
 title: Mi tercera publicación en el blog
 description: 'Tuve algunos problemas, pero preguntar en la comunidad me ayudó mucho.'
+client: 'test'
 image:
     url: '@assets/images/charls-face.png'
     alt: 'Miniatura de los rayos de Astro.'

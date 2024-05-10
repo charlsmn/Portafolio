@@ -26,6 +26,9 @@ importers:
       '@fontsource-variable/inter-tight':
         specifier: ^5.0.21
         version: 5.0.21
+      '@iconify-json/fa-brands':
+        specifier: ^1.1.8
+        version: 1.1.8
       '@iconify-json/solar':
         specifier: ^1.1.9
         version: 1.1.9
@@ -563,6 +566,9 @@ packages:
 
   '@formatjs/intl-localematcher@0.5.4':
     resolution: {integrity: sha512-zTwEpWOzZ2CiKcB93BLngUX59hQkuZjT2+SAQEscSm52peDW/getsawMcWF1rGRpMCX6D7nSJA3CzJ8gn13N/g==}
+
+  '@iconify-json/fa-brands@1.1.8':
+    resolution: {integrity: sha512-0HVT1+7hDww2vTtGyX4maUyiEXDYd6CK57bOGJ3hc3fjmXpMI9QKdej21pPSv1jBZ2nGzTlg8WJ2yNtN88/lFQ==}
 
   '@iconify-json/solar@1.1.9':
     resolution: {integrity: sha512-BcWzZqA02BiQduYizqU/J4v4RNs0MkjZUGpMbejpozH8YQSt3+S/LfV6zfVRonx/2DhXTVSqiLa1abDRAZtojQ==}
@@ -4045,6 +4051,10 @@ snapshots:
   '@formatjs/intl-localematcher@0.5.4':
     dependencies:
       tslib: 2.6.2
+
+  '@iconify-json/fa-brands@1.1.8':
+    dependencies:
+      '@iconify/types': 2.0.0
 
   '@iconify-json/solar@1.1.9':
     dependencies:
