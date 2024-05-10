@@ -21,3 +21,11 @@
         letter-spacing: -0.02em;
     }
 }
+
+.noise {
+    background-image: url('../assets/noise.svg');
+    background-repeat: repeat;
+    background-size: 300px 300px;
+
+    mix-blend-mode: multiply;
+}
