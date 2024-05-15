@@ -5,6 +5,7 @@ import '../styles/styles.css'
 
 //Components
 import Header from '@components/Header.astro'
+import { MouseAnimated } from '@components/MouseAnimated'
 
 //Fonts
 import '@fontsource-variable/inter-tight'
@@ -41,6 +42,7 @@ const { title, description } = Astro.props
     <body
         class="bg-white dark:bg-slate-950 text-slate-800 dark:text-slate-200 text-xl"
     >
+        <MouseAnimated  client:load/>
         
         <div class="absolute top-0 bottom-0 z-[-2] min-h-screen w-full bg-white dark:bg-slate-950
         bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(217,216,255,1),rgba(255,255,255,0.9))]

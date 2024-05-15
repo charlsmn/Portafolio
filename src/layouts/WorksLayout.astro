@@ -12,6 +12,7 @@ const { frontmatter } = Astro.props
             alt={frontmatter.image.alt}
             width={400}
             height={400}
+            transition:name={frontmatter.image.alt}
         />
         <span
             >{
@@ -21,7 +22,7 @@ const { frontmatter } = Astro.props
             }</span
         >
         <span>{frontmatter.category}</span>
-        <h1>{frontmatter.title}</h1>
+        <h1 transition:name={frontmatter.title}>{frontmatter.title}</h1>
         <slot />
     </article>
 </Layout>

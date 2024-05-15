@@ -3,9 +3,12 @@ import Section from "./Section.astro";
 import Button from "./ui/Button.astro";
 import { Icon } from 'astro-icon/components'
 
+
+const pathname = Astro.url.pathname
+
 ---
 <footer>
-    <Section class="border-b border-slate-600 dark:border-slate-800 bg-slate-100 dark:bg-slate-900">
+    <Section id="letsTalk" class=`border-b border-slate-600 dark:border-slate-800 bg-slate-100 dark:bg-slate-900 ${pathname === '/contact' ? 'hidden' : ''} `>
         <div class="text-center justify-center items-center flex flex-col">
             <h2 class="md:max-w-screen-lg mb-8 text-slate-800 dark:text-slate-200">Want to create something <span class="text-primary">awesome?</span></h2>
             <Button href="/contact">Let's Talk</Button>
