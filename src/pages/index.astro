@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets'
 import CarlosFace from '@assets/images/charls-face.png'
+import { Icon } from 'astro-icon/components'
 
 import Layout from '@layouts/Layout.astro'
 import Section from '@components/Section.astro'
@@ -10,6 +11,7 @@ import Link from '@components/ui/Link.astro'
 import { getCollection } from 'astro:content'
 import ButtonLine from '@components/ui/ButtonLine.astro'
 import WorkCard from '@components/ui/WorkCard.astro'
+import CtaHorizontalScroll from '@components/cta-horizontal/CtaHorizontalScroll.astro'
 
 const allWorks = await getCollection('works')
 ---
@@ -20,7 +22,30 @@ const allWorks = await getCollection('works')
 >
     <main>
         <Section>
-            <p class="text-2xl mb-4 font-regular">Hello! I'm Carlos.</p>
+            <div class="mb-4 font-regular flex items-center gap-4">
+                <span class="text-2xl">Hello! I'm Carlos.</span>
+                <a
+                    href="/contact"
+                    class="group border rounded-lg py-0.5 px-3 text-[18px] bg-slate-400 dark:bg-slate-100 dark:bg-opacity-10 bg-opacity-10 border-opacity-10 border-slate-400 hover:scale-105 transition hover:bg-opacity-20"
+                >
+                    <div class="flex items-center gap-2">
+                        <Icon
+                            name="solar:sticker-circle-bold-duotone"
+                            class="text-green-500"
+                        />
+                        <div class="flex flex-col overflow-hidden h-7">
+                            <span
+                                class="group-hover:-translate-y-7 transition-all"
+                                >Available to work</span
+                            >
+                            <span
+                                class="group-hover:-translate-y-7 transition-all"
+                                >Let's Talk</span
+                            >
+                        </div>
+                    </div>
+                </a>
+            </div>
             <h1 class="relative">
                 Designing digital product with emphasis on <span
                     class="text-primary">visual design</span
@@ -72,23 +97,32 @@ const allWorks = await getCollection('works')
         <Section>
             <h2>Discover my latest works</h2>
             <div class="grid grid-cols-2 gap-10 mt-10">
-
                 {
                     allWorks.map((work) => {
                         return (
-                            <WorkCard title={work.data.title} url={`works/${work.slug}`} image={work.data.image} category={work.data.category}/>
+                            <WorkCard
+                                title={work.data.title}
+                                url={`works/${work.slug}`}
+                                image={work.data.image}
+                                category={work.data.category}
+                            />
                         )
                     })
                 }
             </div>
-            <div class="text-center flex items-center w-full mx-auto justify-center mt-16">
+            <div
+                class="text-center flex items-center w-full mx-auto justify-center mt-16"
+            >
                 <Link href="/works">View All Works</Link>
             </div>
         </Section>
+        <CtaHorizontalScroll />
         <Section>
             <div class="flex justify-between items-end">
-                <h2 class="md:max-w-screen-md">Sometimes, I also write and share some insights</h2>
-                <ButtonLine href="/blog">View All Insights</Button>
+                <h2 class="md:max-w-screen-md">
+                    Sometimes, I also write and share some insights
+                </h2>
+                <ButtonLine href="/blog">View All Insights</ButtonLine>
             </div>
         </Section>
     </main>

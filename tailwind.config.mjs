@@ -11,7 +11,17 @@ export default {
             colors: {
                 primary: '#FF3466',
             },
+            animation: {
+                'loop-scroll': 'loop-scroll 50s linear infinite',
+            },
+            keyframes: {
+                'loop-scroll': {
+                    from: { trasform: 'translateX(0)' },
+                    to: { transform: 'translateX(-100%)' },
+                },
+            },
         },
     },
+    darkMode: 'selector',
     plugins: [],
 }

@@ -3,18 +3,22 @@ import Logo from '@assets/Logo.astro'
 import ButtonLine from './ui/ButtonLine.astro'
 import Burger from './ui/Burger.astro'
 import Section from './Section.astro'
+import ToggleTheme from './ToggleTheme.astro'
 ---
 
 <header class="py-3 md:py-5">
     <Section class="!py-0">
         <div class="flex items-center justify-between">
-            <a href="/"><Logo ></a>
-            <div class="flex gap-4 items-center">
-                <ButtonLine href="/contact" class="hidden md:flex"
-                    >Let's Talk</ButtonLine
-                >
-                <Burger />
-            </div>
+            <a href="/"
+                ><Logo />
+                <div class="flex gap-4 items-center">
+                    <ButtonLine href="/contact" class="hidden md:flex"
+                        >Let's Talk</ButtonLine
+                    >
+                    <Burger />
+                    <ToggleTheme transition:persist />
+                </div>
+            </a>
         </div>
     </Section>
 </header>
