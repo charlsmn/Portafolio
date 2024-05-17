@@ -54,5 +54,17 @@ const { title, description } = Astro.props
         <Header />
         <slot />
         <Footer />
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js"
+        ></script>
+        <script is:inline>
+            document.addEventListener('astro:page-load', () => {
+                SmoothScroll({
+                    frameRate: 300,
+                    animationTime: 1000,
+                    stepSize: 100,
+                })
+            })
+        </script>
     </body>
 </html>

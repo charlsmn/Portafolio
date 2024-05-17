@@ -3,17 +3,23 @@ import { Icon } from 'astro-icon/components'
 ---
 
 <div
-    class="border flex items-center border-slate-800 dark:border-slate-200 rounded-full"
+    class="border flex items-center border-slate-800 dark:border-slate-200 rounded-full group hover:scale-105 transition-all"
 >
     <button
         id="moon"
         class="px-5 py-3 flex items-center gap-2 min-w-[116px] justify-center"
     >
-        <Icon name="solar:moon-broken" />
+        <Icon
+            name="solar:moon-bold-duotone"
+            class="group-hover:text-blue-700 transition-all"
+        />
         <span class="text-[16px]">Dark</span>
     </button>
     <button id="sun" class="px-7 py-3 flex items-center gap-2 min-w-[116px]">
-        <Icon name="solar:sun-broken" />
+        <Icon
+            name="solar:sun-bold-duotone"
+            class="group-hover:text-yellow-500 transition-all"
+        />
         <span class="text-[16px]">Light</span>
     </button>
 </div>
