@@ -7,19 +7,26 @@ const { title, url, image, category } = Astro.props
 
 <article>
     <a href={url} class="group block overflow-hidden duration-700 transition">
-        <div class="relative overflow-hidden rounded-2xl">
-            <div class="absolute top-0 bottom-0 z-[-2] min-h-full w-full bg-white dark:bg-slate-950
-        bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(217,216,255,1),rgba(255,255,255,0.9))]
-        dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))] group-hover:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(255,51,102,0.3),rgba(255,255,255,0))] transition-all duration-500"></div>
-            <Image src={image.url} alt={image.alt} class="aspect-auto object-contain object-bottom w-full  rounded-2xl h-[500px] group-hover:scale-105 transition-all duration-500" transition:name={image.alt} loading="eager"/>
-        </div>
-        
+        <Image
+            src={image.url}
+            alt={image.alt}
+            class="aspect-auto object-contain object-bottom w-full rounded-2xl h-[500px] group-hover:scale-105 transition-all duration-500"
+            transition:name={image.alt}
+            loading="eager"
+        />
+
         <div class="flex items-center justify-between mt-5">
             <div>
-                <h3 class="font-semibold text-2xl" transition:name={title}>{title}</h3>
-                <span class="text-slate-800 dark:text-slate-100 font-light">{category}</span>
+                <h3 class="font-semibold text-2xl" transition:name={title}>
+                    {title}
+                </h3>
+                <span class="text-slate-800 dark:text-slate-100 font-light"
+                    >{category}</span
+                >
             </div>
-            <span class="border border-slate-800 px-7 py-3 rounded-full dark:border-slate-100 text-slate-800 dark:text-slate-100">
+            <span
+                class="border border-slate-800 px-7 py-3 rounded-full dark:border-slate-100 text-slate-800 dark:text-slate-100"
+            >
                 <Icon name="solar:arrow-right-broken" width={24} />
             </span>
         </div>

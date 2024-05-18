@@ -1,14 +1,13 @@
 ---
-import { db, Users } from 'astro:db';
-import { z } from 'astro:content';
+import { db, Users } from 'astro:db'
+import { z } from 'astro:content'
 
-import Layout from "@layouts/Layout.astro"
-import Section from "@components/Section.astro"
+import Layout from '@layouts/Layout.astro'
+import Section from '@components/Section.astro'
 
 export const prerender = false
 
 if (Astro.request.method === 'POST') {
-
     const formSchema = z.object({
         name: z.string(),
         email: z.string().email(),
@@ -16,29 +15,26 @@ if (Astro.request.method === 'POST') {
         company: z.string(),
     })
 
-    const formData = await Astro.request.formData();
+    const formData = await Astro.request.formData()
 
-    const name = formData.get('name');
-    const email = formData.get('email');
-    const message = formData.get('message');
-    const company = formData.get('company');
+    const name = formData.get('name')
+    const email = formData.get('email')
+    const message = formData.get('message')
+    const company = formData.get('company')
 
     const contactFormData = {
         name,
         email,
         message,
-        company
+        company,
     }
 
     const validateData = formSchema.safeParse(contactFormData)
 
-    if(validateData.success) {
-
+    if (validateData.success) {
         await db.insert(Users).values(validateData.data)
-        
     }
 }
-
 ---
 
 <Layout title="Contact" description="test">
@@ -48,34 +44,72 @@ if (Astro.request.method === 'POST') {
                 <span class="text-primary">Say Hi!</span>
                 and tell me about your idea
             </h1>
-            <p class="text-2xl ">Have a nice works? Reach out and let's chat.</p>
+            <p class="text-2xl">Have a nice works? Reach out and let's chat.</p>
         </div>
     </Section>
     <div class="container md:max-w-screen-md mx-auto mb-12">
-        <form method="POST" class="flex flex-col gap-6" id="contact" name="contact">
+        <form
+            method="POST"
+            class="flex flex-col gap-6"
+            id="contact"
+            name="contact"
+            autocomplete="on"
+        >
             <div class="flex flex-col gap-4">
                 <label for="name" class="text-md">Name</label>
-                <input type="text" name="name" class="border-b border-slate-400 bg-transparent px-2 pb-5 focus:outline-none focus:border-primary" placeholder="Hello..." required>
-                
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    class="border-b border-slate-400 bg-transparent px-2 py-3 focus:outline-none focus:border-primary"
+                    placeholder="Hello..."
+                    required
+                    autocomplete="name"
+                />
             </div>
-            <div class="flex flex-col gap-4"> 
+            <div class="flex flex-col gap-4">
                 <label for="email">Email</label>
-                <input type="email" name="email" id="email" class="border-b bg-transparent px-2 pb-5 focus:outline-none focus:border-primary" placeholder="Where can I replay?" required>
-                
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    id="email"
+                    class="border-b bg-transparent px-2 py-3 focus:outline-none focus:border-primary"
+                    placeholder="Where can I replay?"
+                    required
+                    autocomplete="email"
+                />
             </div>
             <div class="flex flex-col gap-4">
                 <label for="company">Company Name</label>
-                <input type="text" name="company" class="border-b bg-transparent px-2 pb-5 focus:outline-none focus:border-primary" placeholder="Your company or website" required>
-                
+                <input
+                    type="text"
+                    id="company"
+                    name="company"
+                    class="border-b bg-transparent px-2 py-3 focus:outline-none focus:border-primary"
+                    placeholder="Your company or website"
+                    required
+                    autocomplete="off"
+                />
             </div>
             <div class="flex flex-col gap-4">
                 <label for="message">Message</label>
-                <textarea name="message" id="message" cols="20" rows="5" class="border-b bg-transparent px-2 pb-5 focus:outline-none focus:border-primary" placeholder="I wan to build some..." required></textarea>
-                
+                <textarea
+                    name="message"
+                    id="message"
+                    cols="20"
+                    rows="5"
+                    class="border-b bg-transparent px-2 py-3 focus:outline-none focus:border-primary"
+                    placeholder="I wan to build some..."
+                    required></textarea>
             </div>
-            
-            <div>
-                <input type="submit" value="Submit" class=" flex gap-2 items-center bg-slate-800 text-white px-16 py-5 rounded-full font-semibold hover:opacity-70 transition text-2xl dark:bg-white dark:text-slate-800 cursor-pointer">
+
+            <div class="flex items-center justify-center">
+                <input
+                    type="submit"
+                    value="Submit"
+                    class="flex gap-2 items-center bg-slate-800 text-white px-16 py-3 rounded-full font-semibold hover:bg-primary hover:text-white transition text-2xl dark:bg-white dark:text-slate-800 cursor-pointer"
+                />
             </div>
         </form>
     </div>
