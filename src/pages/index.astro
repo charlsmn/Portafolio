@@ -1,14 +1,11 @@
 ---
-import { Image } from 'astro:assets'
-import CarlosFace from '@assets/images/charls-face.png'
-import { Icon } from 'astro-icon/components'
+import { getCollection } from 'astro:content'
 
 import Layout from '@layouts/Layout.astro'
 import Section from '@components/Section.astro'
 import Button from '@components/ui/Button.astro'
 import Link from '@components/ui/Link.astro'
 
-import { getCollection } from 'astro:content'
 import ButtonLine from '@components/ui/ButtonLine.astro'
 import WorkCard from '@components/ui/WorkCard.astro'
 import CtaHorizontalScroll from '@components/cta-horizontal/CtaHorizontalScroll.astro'
@@ -56,12 +53,6 @@ const allWorks = await getCollection('works')
                 Designing digital product with emphasis on <span
                     class="text-primary">visual design</span
                 >
-                <!-- <Image
-                    src={CarlosFace}
-                    alt="Logo"
-                    class="absolute -right-20 -bottom-10 drop-shadow-2xl"
-                    loading="eager"
-                /> -->
             </h1>
 
             <div class="flex items-center justify-between mt-16">
@@ -103,20 +94,24 @@ const allWorks = await getCollection('works')
             </div>
             <Services />
         </Section>
+
         <Section>
             <h2>Discover my latest works</h2>
+
             <div class="grid grid-cols-2 gap-10 mt-10">
                 {
-                    allWorks.map((work) => {
-                        return (
-                            <WorkCard
-                                title={work.data.title}
-                                url={`works/${work.slug}`}
-                                image={work.data.image}
-                                category={work.data.category}
-                            />
-                        )
-                    })
+                    allWorks
+                        .filter((_, i) => i < 4)
+                        .map((work) => {
+                            return (
+                                <WorkCard
+                                    title={work.data.title}
+                                    url={`works/${work.slug}`}
+                                    image={work.data.image}
+                                    category={work.data.category}
+                                />
+                            )
+                        })
                 }
             </div>
             <div

@@ -6,23 +6,50 @@ const { frontmatter } = Astro.props
 ---
 
 <Layout title={frontmatter.title} description={frontmatter.description}>
-    <article class="container max-w-screen-md mx-auto">
-        <Image
-            src={frontmatter.image.url}
-            alt={frontmatter.image.alt}
-            width={400}
-            height={400}
-            transition:name={frontmatter.image.alt}
-        />
-        <span
-            >{
-                frontmatter.pubDate
-                    ? frontmatter.pubDate.toLocaleDateString()
-                    : ''
-            }</span
-        >
-        <span>{frontmatter.category}</span>
-        <h1 transition:name={frontmatter.title}>{frontmatter.title}</h1>
-        <slot />
+    <article class="container mx-auto px-5 max-w-8xl">
+        <header class="mt-16 flex gap-20 justify-between">
+            <div class="w-2/5">
+                <span
+                    >{
+                        frontmatter.pubDate
+                            ? frontmatter.pubDate.toLocaleDateString('es-ES', {
+                                  year: 'numeric',
+                                  month: 'long',
+                                  day: 'numeric',
+                              })
+                            : ''
+                    }</span
+                >
+                <h1
+                    transition:name={frontmatter.title}
+                    class="font-semibold mb-10"
+                >
+                    {frontmatter.title}
+                </h1>
+                <span
+                    class="dark:text-slate-400 font-light text-[17px] flex gap-2 text-slate-400 my-3"
+                >
+                    {
+                        frontmatter.category.map((cat: string) => {
+                            return (
+                                <span class="rounded-full border px-3 border-slate-400">
+                                    {cat}
+                                </span>
+                            )
+                        })
+                    }
+                </span>
+            </div>
+            <Image
+                src={frontmatter.image.url}
+                alt={frontmatter.image.alt}
+                transition:name={frontmatter.image.alt}
+                class="rounded-3xl w-3/5"
+                loading={'eager'}
+            />
+        </header>
+        <div class="max-w-screen-md mx-auto mt-10 content-work mb-10">
+            <slot />
+        </div>
     </article>
 </Layout>

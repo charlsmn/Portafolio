@@ -33,3 +33,43 @@
 .display-none {
     @apply hidden;
 }
+
+.content-work {
+    @apply dark:text-slate-300 text-slate-800;
+}
+
+.content-work p {
+    margin-bottom: 25px;
+    line-height: 2rem;
+    margin-top: 20px;
+}
+
+.content-work h3 {
+    font-weight: 600;
+    font-size: 30px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.content-work ul {
+    padding-left: 40px;
+    margin-bottom: 15px;
+    line-height: 2rem;
+}
+
+.content-work ul li {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.content-work ul li::before {
+    content: '•';
+    position: absolute;
+    left: -20px;
+    @apply text-primary;
+}
+
+.content-work img {
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.16);
+}
