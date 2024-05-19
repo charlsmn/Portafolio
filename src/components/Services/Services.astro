@@ -1,0 +1,42 @@
+---
+import ServiceCard from './ServiceCard.astro'
+
+const servicesUI = [
+    'Website Design',
+    'Mobile App Design',
+    'UI/UX Design',
+    'Dashboard Design',
+]
+
+const servicesDev = [
+    'Website Development',
+    'Landing Page Development',
+    'Mobile App Development',
+    'Maintenance & Support',
+]
+
+const servicesDesign = [
+    'Website Banners & Graphics',
+    'Digital Advertisement',
+    'Social Media Design',
+    'Product Packaging Design',
+]
+---
+
+<div class="grid grid-cols-3 gap-10 mt-10">
+    <ServiceCard
+        title="UI/UX Design"
+        description="Craft unforgettable, user-centric experiences that make a difference."
+        services={servicesUI}
+    />
+    <ServiceCard
+        title="Web Development"
+        description="Develop and maintain high-quality websites and web applications."
+        services={servicesDev}
+    />
+    <ServiceCard
+        title="Graphic Design"
+        description="Design visually appealing and effective marketing materials."
+        services={servicesDesign}
+    />
+</div>

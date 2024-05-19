@@ -1,61 +1,67 @@
 ---
-import Layout from "@layouts/Layout.astro";
-import Section from "@components/Section.astro";
-
+import Layout from '@layouts/Layout.astro'
+import Section from '@components/Section.astro'
 
 const EXPERIENCE = [
     {
-        title: "Wordpress Developer",
-        company: "Marketeros Agencia",
-        date: "2020 - Now",
+        title: 'Wordpress Developer',
+        company: 'Marketeros Agencia',
+        date: '2020 - Now',
     },
     {
-        title: "UX/UI Designer",
-        company: "Marketeros Agencia",
-        date: "2019 - 2020",
+        title: 'UX/UI Designer',
+        company: 'Marketeros Agencia',
+        date: '2019 - 2020',
     },
     {
-        title: "SEO Specialist",
-        company: "Marketeros Agencia",
-        date: "2018 - 2019",
+        title: 'SEO Specialist',
+        company: 'Marketeros Agencia',
+        date: '2018 - 2019',
     },
     {
-        title: "Web Designer | Community Manager",
-        company: "Corporación Educativa Indoamericana",
-        date: "2014 - 2017",
-    }
+        title: 'Web Designer | Community Manager',
+        company: 'Corporación Educativa Indoamericana',
+        date: '2014 - 2017',
+    },
 ]
 
 const EDUCATION = [
     {
-        title: "Visual Design",
-        university: "Fundación Universitaria Panamericana",
-        date: "2017 - 2020"
+        title: 'Visual Design',
+        university: 'Fundación Universitaria Panamericana',
+        date: '2017 - 2020',
     },
     {
-        title: "Technology in Graphic Design",
-        university: "Corporación Internacional para el Desarrollo Educativo - CIDE",
-        date: "2011 - 2014"
+        title: 'Technology in Graphic Design',
+        university:
+            'Corporación Internacional para el Desarrollo Educativo - CIDE',
+        date: '2011 - 2014',
     },
     {
-        title: "Javascript Course",
-        university: "Platzi",
-        date: "2022"
+        title: 'Javascript Course',
+        university: 'Platzi',
+        date: '2022',
     },
     {
-        title: "Wordpress Development",
-        university: "Platzi",
-        date: "2022"
-    }
+        title: 'Wordpress Development',
+        university: 'Platzi',
+        date: '2022',
+    },
 ]
-
 ---
 
 <Layout title="About Me" description="test">
     <Section>
-        <div class="text-center">
-            <h1 class="mb-8"><spasn class="text-primary">About me</spasn>, a Visual Designer living in Bogotá</h1>
-            <p class="text-2xl">As a Senior Designer with over 10 years of experience, I specialize in creating intuitive and user-centered interfaces for a wide range of digital products and experiences.</p>
+        <div class="text-center md:max-w-screen-xl mx-auto">
+            <h1 class="mb-8">
+                <spasn class="text-primary">About me</spasn>, a Visual Designer
+                living in Bogotá
+            </h1>
+            <p class="text-2xl md:max-w-screen-md mx-auto">
+                As a Senior Designer with over 10 years of experience, I
+                specialize in creating intuitive and user-centered interfaces
+                for a wide range of digital products and experiences.
+            </p>
         </div>
     </Section>
     <Section>
@@ -68,7 +74,9 @@ const EDUCATION = [
                             <div class="flex items-center justify-between border-b-2 px-4 py-7 border-primary last-of-type:border-b-0 border-opacity-20 hover:bg-slate-200 hover:dark:bg-slate-900 hover:bg-opacity-40 transition-all">
                                 <div>
                                     <h4 class="text-2xl">{exp.title}</h4>
-                                    <span class="text-lg font-light opacity-60">{exp.company}</span>
+                                    <span class="text-lg font-light opacity-60">
+                                        {exp.company}
+                                    </span>
                                 </div>
                                 <span class="text-xl">{exp.date}</span>
                             </div>
@@ -76,18 +84,21 @@ const EDUCATION = [
                     })
                 }
             </div>
-            
         </div>
     </Section>
-    <Section class="bg-slate-100 dark:bg-slate-950">
+    <Section
+        class="bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(217,216,255,0.2),rgba(255,255,255,0.9))] dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.1),rgba(255,255,255,0))]"
+    >
         <h2 class="mb-16">My Education</h2>
         {
             EDUCATION.map((edu) => {
-                return(
+                return (
                     <div class="flex items-center justify-between border-b-2 px-4 py-7 border-primary last-of-type:border-b-0 border-opacity-20 hover:bg-slate-200 hover:dark:bg-slate-950 hover:bg-opacity-10 transition-all">
                         <div>
                             <h4 class="text-2xl">{edu.title}</h4>
-                            <span class="text-lg font-light opacity-60">{edu.university}</span>
+                            <span class="text-lg font-light opacity-60">
+                                {edu.university}
+                            </span>
                         </div>
                         <span class="text-xl opacity-80 ">{edu.date}</span>
                     </div>

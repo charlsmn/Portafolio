@@ -1,0 +1,38 @@
+---
+import { Icon } from 'astro-icon/components'
+
+interface Props {
+    title: string
+    description: string
+    services: string[]
+}
+
+const { title, description, services } = Astro.props
+---
+
+<a
+    href="/contact"
+    class="border rounded-3xl p-9 transition-all group hover:shadow-3xl shadow-primary hover:border-primary relative duration-500 dark:bg-slate-950 dark:border-slate-900"
+>
+    <Icon
+        name="solar:round-arrow-right-up-line-duotone"
+        class="text-6xl text-primary absolute right-3 top-3 opacity-0 group-hover:opacity-100 transition-all duration-500"
+    />
+    <h3
+        class="text-3xl mb-4 transition-all font-semibold group-hover:translate-y-5 duration-500"
+    >
+        {title}
+    </h3>
+    <p class="group-hover:translate-y-3 transition duration-500">
+        {description}
+    </p>
+    <ul class="mt-8">
+        {
+            services.map((service) => (
+                <li class="mb-3 border-b pb-3 last-of-type:border-b-0 group-hover:translate-y-3 transition duration-700 dark:border-slate-800">
+                    {service}
+                </li>
+            ))
+        }
+    </ul>
+</a>

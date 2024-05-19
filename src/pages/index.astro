@@ -12,6 +12,7 @@ import { getCollection } from 'astro:content'
 import ButtonLine from '@components/ui/ButtonLine.astro'
 import WorkCard from '@components/ui/WorkCard.astro'
 import CtaHorizontalScroll from '@components/cta-horizontal/CtaHorizontalScroll.astro'
+import Services from '@components/Services/Services.astro'
 
 const allWorks = await getCollection('works')
 ---
@@ -94,14 +95,17 @@ const allWorks = await getCollection('works')
                 </div>
             </div>
         </Section>
-        <Section>
-            <div>
+        <Section
+            class="bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(217,216,255,0.2),rgba(255,255,255,0.9))] dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.1),rgba(255,255,255,0))] border-t border-slate-200 dark:border-slate-900"
+        >
+            <div class="text-center max-w-screen-md m-auto">
                 <h2>Services to help your business grow</h2>
             </div>
+            <Services />
         </Section>
         <Section>
             <h2>Discover my latest works</h2>
-            <div class="grid grid-cols-3 gap-10 mt-10">
+            <div class="grid grid-cols-2 gap-10 mt-10">
                 {
                     allWorks.map((work) => {
                         return (
