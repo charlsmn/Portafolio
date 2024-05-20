@@ -7,8 +7,8 @@ const { frontmatter } = Astro.props
 
 <Layout title={frontmatter.title} description={frontmatter.description}>
     <article class="container mx-auto px-5 max-w-8xl">
-        <header class="mt-16 flex gap-20 justify-between items-start">
-            <div class="w-2/5">
+        <header class="mt-16 md:flex gap-20 justify-between items-start">
+            <div class="md:w-2/5">
                 <span
                     >{
                         frontmatter.pubDate
@@ -47,7 +47,7 @@ const { frontmatter } = Astro.props
                 src={frontmatter.image.url}
                 alt={frontmatter.image.alt}
                 transition:name={frontmatter.image.alt}
-                class="rounded-3xl w-3/5"
+                class="rounded-3xl md:w-3/5"
                 loading={'eager'}
             />
         </header>
