@@ -25,7 +25,7 @@ const { title, url, image, category } = Astro.props
                     {title}
                 </h3>
                 <span
-                    class="dark:text-slate-400 font-light text-[17px] flex gap-2 text-slate-400 my-3"
+                    class="dark:text-slate-400 font-light text-[17px] gap-2 text-slate-400 my-3 hidden md:flex"
                 >
                     {
                         category.map((cat: string) => {

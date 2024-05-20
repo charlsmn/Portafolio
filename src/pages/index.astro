@@ -55,21 +55,21 @@ const allWorks = await getCollection('works')
                 >
             </h1>
 
-            <div class="flex items-center justify-between mt-16">
+            <div class="md:flex items-center justify-between mt-16">
                 <Button href="/contact">Let's Talk</Button>
-                <p class="text-2xl max-w-xl">
+                <p class="text-2xl max-w-xl mt-10 md:mt-0">
                     A multidisciplinary designer harnessing the power of design
                     to achieve online goals.
                 </p>
             </div>
         </Section>
         <Section>
-            <div class="flex gap-10">
+            <div class="md:flex gap-10">
                 <div
-                    class="w-1/3 overflow-hidden dark:bg-slate-900 bg-slate-200 rounded-2xl"
+                    class="md:w-1/3 overflow-hidden dark:bg-slate-900 bg-slate-200 rounded-2xl"
                 >
                 </div>
-                <div class="w-2/3 flex flex-col gap-9 items-start py-7">
+                <div class="md:w-2/3 flex flex-col gap-9 items-start py-7">
                     <div class="flex flex-col gap-4">
                         <h2>
                             Design that sparks engagement and inspires action
@@ -98,7 +98,7 @@ const allWorks = await getCollection('works')
         <Section>
             <h2>Discover my latest works</h2>
 
-            <div class="grid grid-cols-2 gap-10 mt-10">
+            <div class="grid md:grid-cols-2 gap-10 mt-10">
                 {
                     allWorks
                         .filter((_, i) => i < 4)
@@ -122,8 +122,8 @@ const allWorks = await getCollection('works')
         </Section>
         <CtaHorizontalScroll />
         <Section>
-            <div class="flex justify-between items-end">
-                <h2 class="md:max-w-screen-md">
+            <div class="md:flex justify-between items-end max-w-">
+                <h2 class="md:max-w-screen-md mb-5 md:mb-0">
                     Sometimes, I also write and share some insights
                 </h2>
                 <ButtonLine href="/blog">View All Insights</ButtonLine>

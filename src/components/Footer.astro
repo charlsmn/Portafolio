@@ -16,14 +16,15 @@ const pathname = Astro.url.pathname
                 class="md:max-w-screen-lg mb-8 text-slate-800 dark:text-slate-200"
             >
                 Want to create something <span class="text-primary"
-                    >awesome?</span>
+                    >awesome?</span
+                >
             </h2>
             <Button href="/contact">Let's Talk</Button>
         </div>
     </Section>
     <div class="bg-gray-950">
-        <div class="container mx-auto py-5 pt-28 pb-14 max-w-8xl">
-            <div class="flex justify-between">
+        <div class="container mx-auto py-5 px-5 pt-28 pb-14 max-w-8xl">
+            <div class="md:flex justify-between">
                 <div>
                     <div class="text-slate-200 font-semibold text-3xl">
                         Carlos Mancilla
@@ -32,7 +33,7 @@ const pathname = Astro.url.pathname
                         UI & UX Designer | Web Developer
                     </div>
                 </div>
-                <ul class="flex gap-4">
+                <ul class="flex gap-4 mt-5 md:mt-5">
                     <li>
                         <a
                             href="https://www.linkedin.com/in/carlos-mancilla/"
@@ -68,7 +69,8 @@ const pathname = Astro.url.pathname
             >
                 ©{new Date().getFullYear()}. Designed by <a
                     href="/"
-                    class="font-medium">Carlos Mancilla</a>
+                    class="font-medium">Carlos Mancilla</a
+                >
             </div>
         </div>
     </div>
