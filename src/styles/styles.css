@@ -4,7 +4,7 @@
 
 @layer base {
     h1 {
-        @apply text-7xl md:text-8xl;
+        @apply text-6xl md:text-8xl;
         font-weight: 700;
         line-height: 100%;
         letter-spacing: -0.02em;

@@ -30,7 +30,7 @@ const { frontmatter } = Astro.props
                     ><b>Client:</b> {frontmatter.client}</span
                 >
                 <span
-                    class="dark:text-slate-400 font-light text-[17px] flex gap-2 text-slate-400 my-3"
+                    class="dark:text-slate-400 font-light text-[17px] flex flex-wrap gap-2 text-slate-400 my-3"
                 >
                     {
                         frontmatter.category.map((cat: string) => {
