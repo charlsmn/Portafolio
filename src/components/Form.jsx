@@ -10,7 +10,6 @@ export const Form = () => {
     const [formStatus, setFormStatus] = useState(null)
 
     const onSubmit = async (data) => {
-        console.log('Form data:', data)
         setFormStatus(null)
 
         try {
@@ -165,10 +164,10 @@ export const Form = () => {
             <div>
                 {formStatus && (
                     <div
-                        className={`mt-4 p-4 text-center rounded ${
+                        className={`mt-4 p-4 text-center rounded text-white ${
                             formStatus.type === 'success'
-                                ? 'bg-green-500 text-white'
-                                : 'bg-red-500 text-white'
+                                ? 'bg-green-500'
+                                : 'bg-red-500'
                         }`}
                     >
                         {formStatus.message}
