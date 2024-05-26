@@ -2,7 +2,11 @@ import { useForm } from 'react-hook-form'
 import { useState } from 'react'
 
 export const Form = () => {
-    const { register, handleSubmit } = useForm()
+    const {
+        register,
+        formState: { errors },
+        handleSubmit,
+    } = useForm()
     const [formStatus, setFormStatus] = useState(null)
 
     const onSubmit = async (data) => {
@@ -52,30 +56,76 @@ export const Form = () => {
                 <label htmlFor="name">Name</label>
                 <input
                     type="text"
-                    className="border-b border-slate-400 bg-transparent px-2 py-3 focus:outline-none focus:border-primary"
+                    className="border-b border-slate-400 bg-transparent px-2 py-3 focus:outline-none focus:border-primary capitalize"
                     placeholder="Hello..."
-                    {...register('name', { required: true })}
+                    {...register('name', {
+                        required: {
+                            value: true,
+                            message: 'Name is required',
+                        },
+                        minLength: {
+                            value: 3,
+                            message: 'Name is to short',
+                        },
+                    })}
+                    onInput={(e) =>
+                        (e.target.value = e.target.value.toLowerCase())
+                    }
                 />
+                {errors.name && (
+                    <p role="alert" className="text-red-500 text-sm">
+                        {errors.name.message}
+                    </p>
+                )}
             </div>
             <div className="flex flex-col gap-4">
                 <label htmlFor="email">Email</label>
                 <input
                     type="email"
-                    className="border-b bg-transparent px-2 py-3 focus:outline-none focus:border-primary"
+                    className="border-b bg-transparent px-2 py-3 focus:outline-none focus:border-primary lowercase"
                     placeholder="Where can I replay?"
                     autoComplete="email"
-                    {...register('email')}
+                    {...register('email', {
+                        required: {
+                            value: true,
+                            message: 'Email is required',
+                        },
+                        pattern: {
+                            value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                            message: 'Invalid email format',
+                        },
+                    })}
                 />
+                {errors.email && (
+                    <p class="text-red-500 text-sm">{errors.email.message}</p>
+                )}
             </div>
             <div className="flex flex-col gap-4">
                 <label htmlFor="company">Company Name</label>
                 <input
                     type="text"
-                    className="border-b bg-transparent px-2 py-3 focus:outline-none focus:border-primary"
+                    className="border-b bg-transparent px-2 py-3 focus:outline-none focus:border-primary capitalize"
                     placeholder="Your company or website"
                     autoComplete="off"
-                    {...register('company')}
+                    {...register('company', {
+                        required: {
+                            value: true,
+                            message: 'Company is required',
+                        },
+                        minLength: {
+                            value: 3,
+                            message: 'Company is to short',
+                        },
+                    })}
+                    onInput={(e) =>
+                        (e.target.value = e.target.value.toLowerCase())
+                    }
                 />
+                {errors.company && (
+                    <p className="text-red-500 text-sm">
+                        {errors.company.message}
+                    </p>
+                )}
             </div>
             <div className="flex flex-col gap-4">
                 <label htmlFor="message">Message</label>
@@ -84,8 +134,25 @@ export const Form = () => {
                     rows="5"
                     className="border-b bg-transparent px-2 py-3 focus:outline-none focus:border-primary"
                     placeholder="I wan to build some..."
-                    {...register('message')}
+                    {...register('message', {
+                        required: {
+                            value: true,
+                            message: 'Message is required',
+                        },
+                        minLength: {
+                            value: 10,
+                            message: 'Message is to short',
+                        },
+                    })}
+                    onInput={(e) =>
+                        (e.target.value = e.target.value.toLowerCase())
+                    }
                 ></textarea>
+                {errors.message && (
+                    <p role="alert" className="text-red-500 text-sm">
+                        {errors.message.message}
+                    </p>
+                )}
             </div>
             <div className="flex items-center justify-center">
                 <button
