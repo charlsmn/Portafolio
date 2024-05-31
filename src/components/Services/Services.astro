@@ -2,41 +2,41 @@
 import ServiceCard from './ServiceCard.astro'
 
 const servicesUI = [
-    'Website Design',
-    'Mobile App Design',
-    'UI/UX Design',
-    'Dashboard Design',
+    'Diseño de sitios web innovadores',
+    'Diseño de aplicaciones móviles intuitivas',
+    'Diseño de interfaces de usuario (UI/UX) personalizadas',
+    'Diseño de dashboards interactivos',
 ]
 
 const servicesDev = [
-    'Website Development',
-    'Landing Page Development',
-    'Mobile App Development',
-    'Maintenance & Support',
+    'Desarrollo de sitios web optimizados',
+    'Creación de páginas de aterrizaje efectivas',
+    'Desarrollo de aplicaciones móviles robustas',
+    'Mantenimiento y soporte técnico continuo',
 ]
 
 const servicesDesign = [
-    'Website Banners & Graphics',
-    'Digital Advertisement',
-    'Social Media Design',
-    'Product Packaging Design',
+    'Creación de banners y gráficos para sitios web',
+    'Diseño de anuncios digitales llamativos',
+    'Diseño creativo para redes sociales',
+    'Diseño de empaques de productos que destacan',
 ]
 ---
 
 <div class="grid md:grid-cols-3 gap-10 mt-10">
     <ServiceCard
-        title="UI/UX Design"
-        description="Craft unforgettable, user-centric experiences that make a difference."
+        title="Diseño UI/UX"
+        description="Crear experiencias digitales memorables y centradas en el usuario que generan impacto."
         services={servicesUI}
     />
     <ServiceCard
-        title="Web Development"
-        description="Develop and maintain high-quality websites and web applications."
+        title="Desarrollo Web"
+        description="Desarrollar y mantener sitios web y aplicaciones web de alta calidad que funcionan a la perfección."
         services={servicesDev}
     />
     <ServiceCard
-        title="Graphic Design"
-        description="Design visually appealing and effective marketing materials."
+        title="Diseño Gráfico"
+        description="Diseñar materiales de marketing visualmente atractivos y eficaces que resalten tu marca."
         services={servicesDesign}
     />
 </div>

@@ -30,21 +30,21 @@ export const Form = () => {
             if (result.success) {
                 setFormStatus({
                     type: 'success',
-                    message: 'Form submitted successfully!',
+                    message: '¡Formulario enviado exitosamente!',
                 })
             } else {
                 setFormStatus({
                     type: 'error',
                     message:
                         result.error ||
-                        'An error occurred while submitting the form.',
+                        'Se produjo un error al enviar el formulario.',
                 })
             }
         } catch (error) {
             console.error('Error submitting form:', error)
             setFormStatus({
                 type: 'error',
-                message: 'An error occurred while submitting the form.',
+                message: 'Se produjo un error al enviar el formulario.',
             })
         }
     }
@@ -52,19 +52,20 @@ export const Form = () => {
     return (
         <form className="flex flex-col gap-6" onSubmit={handleSubmit(onSubmit)}>
             <div className="flex flex-col gap-4">
-                <label htmlFor="name">Name</label>
+                <label htmlFor="name">Nombre</label>
                 <input
                     type="text"
                     className="border-b border-slate-400 bg-transparent px-2 py-3 focus:outline-none focus:border-primary capitalize"
-                    placeholder="Hello..."
+                    placeholder="Hola..."
                     {...register('name', {
                         required: {
                             value: true,
-                            message: 'Name is required',
+                            message: 'Escribe tu nombre',
                         },
                         minLength: {
                             value: 3,
-                            message: 'Name is to short',
+                            message:
+                                'Tu nombre debe tener al menos 3 caracteres',
                         },
                     })}
                     onInput={(e) =>
@@ -82,16 +83,16 @@ export const Form = () => {
                 <input
                     type="email"
                     className="border-b bg-transparent px-2 py-3 focus:outline-none focus:border-primary lowercase"
-                    placeholder="Where can I replay?"
+                    placeholder="¿Dónde puedo responder?"
                     autoComplete="email"
                     {...register('email', {
                         required: {
                             value: true,
-                            message: 'Email is required',
+                            message: 'Escribe tu email',
                         },
                         pattern: {
                             value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                            message: 'Invalid email format',
+                            message: 'Escribe un email valido',
                         },
                     })}
                 />
@@ -100,20 +101,21 @@ export const Form = () => {
                 )}
             </div>
             <div className="flex flex-col gap-4">
-                <label htmlFor="company">Company Name</label>
+                <label htmlFor="company">Empresa</label>
                 <input
                     type="text"
-                    className="border-b bg-transparent px-2 py-3 focus:outline-none focus:border-primary capitalize"
-                    placeholder="Your company or website"
+                    className="border-b bg-transparent px-2 py-3 focus:outline-none focus:border-primary "
+                    placeholder="Tu empresa o sitio web"
                     autoComplete="off"
                     {...register('company', {
                         required: {
                             value: true,
-                            message: 'Company is required',
+                            message: 'Escribe tu empresa',
                         },
                         minLength: {
                             value: 3,
-                            message: 'Company is to short',
+                            message:
+                                'Tu empresa debe tener al menos 3 caracteres',
                         },
                     })}
                     onInput={(e) =>
@@ -127,20 +129,21 @@ export const Form = () => {
                 )}
             </div>
             <div className="flex flex-col gap-4">
-                <label htmlFor="message">Message</label>
+                <label htmlFor="message">Mensaje</label>
                 <textarea
                     cols="20"
                     rows="5"
                     className="border-b bg-transparent px-2 py-3 focus:outline-none focus:border-primary"
-                    placeholder="I wan to build some..."
+                    placeholder="Quiero crear algo..."
                     {...register('message', {
                         required: {
                             value: true,
-                            message: 'Message is required',
+                            message: 'Escribeme un mensaje',
                         },
                         minLength: {
                             value: 10,
-                            message: 'Message is to short',
+                            message:
+                                'Tu mensaje debe tener al menos 10 caracteres',
                         },
                     })}
                     onInput={(e) =>
@@ -158,7 +161,7 @@ export const Form = () => {
                     type="submit"
                     className="flex gap-2 items-center bg-slate-800 text-white px-16 py-3 rounded-full font-semibold hover:bg-primary hover:text-white transition text-2xl dark:bg-white dark:text-slate-800 cursor-pointer"
                 >
-                    Submit
+                    Enviar
                 </button>
             </div>
             <div>

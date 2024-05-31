@@ -21,9 +21,9 @@ const allWorks = await getCollection('works')
     <main>
         <Section>
             <div class="mb-4 font-regular md:flex items-center gap-4">
-                <span class="text-2xl">Hello! I'm Carlos.</span>
+                <span class="text-2xl">¡Hola! Soy Carlos.</span>
                 <a
-                    href="/contact"
+                    href="/contacto"
                     class="group border rounded-lg py-0.5 px-3 text-[18px] bg-slate-400 dark:bg-slate-100 dark:bg-opacity-10 bg-opacity-10 border-opacity-10 border-slate-400 hover:scale-105 transition hover:bg-opacity-20 flex mt-3 md:mt-0"
                 >
                     <div class="flex items-center gap-2 relative">
@@ -39,27 +39,27 @@ const allWorks = await getCollection('works')
                         <div class="flex flex-col overflow-hidden h-7">
                             <span
                                 class="group-hover:-translate-y-7 transition-all"
-                                >Available to work</span
+                                >Disponible para trabajar</span
                             >
                             <span
                                 class="group-hover:-translate-y-7 transition-all"
-                                >Let's Talk</span
+                                >Hablemos</span
                             >
                         </div>
                     </div>
                 </a>
             </div>
             <h1 class="relative">
-                Designing digital product with emphasis on <span
-                    class="text-primary">visual design</span
+                Diseñando experiencias digitales con énfasis en el <span
+                    class="text-primary">diseño visual</span
                 >
             </h1>
 
             <div class="md:flex items-center justify-between mt-16">
-                <Button href="/contact">Let's Talk</Button>
+                <Button href="/contacto">Hablemos</Button>
                 <p class="text-2xl max-w-xl mt-10 md:mt-0">
-                    A multidisciplinary designer harnessing the power of design
-                    to achieve online goals.
+                    Un diseñador UI/UX multidisciplinario que utiliza el poder
+                    del diseño para lograr objetivos en línea.
                 </p>
             </div>
         </Section>
@@ -71,18 +71,15 @@ const allWorks = await getCollection('works')
                 </div>
                 <div class="md:w-2/3 flex flex-col gap-9 items-start py-7">
                     <div class="flex flex-col gap-4">
-                        <h2>
-                            Design that sparks engagement and inspires action
-                        </h2>
+                        <h2>Diseño que genera compromiso e inspira acción</h2>
                         <p class="mt-5">
-                            Concentrate on your primary objective which is
-                            expanding your business, and leave it to me to
-                            ensure that your business is efficiently portrayed
-                            in the digital realm and distinguishes itself from
-                            the rivals.
+                            Concéntrate en tu objetivo principal, que es
+                            expandir tu negocio. Yo me encargaré de que tu
+                            presencia digital sea intuitiva, atractiva y
+                            eficiente, destacándote de la competencia.
                         </p>
                     </div>
-                    <Link href="/about">About me</Link>
+                    <Link href="/sobre-mi">Sobre mí</Link>
                 </div>
             </div>
         </Section>
@@ -90,13 +87,13 @@ const allWorks = await getCollection('works')
             class="bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(217,216,255,0.2),rgba(255,255,255,0.9))] dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.1),rgba(255,255,255,0))] border-t border-slate-200 dark:border-slate-900"
         >
             <div class="text-center max-w-screen-md m-auto">
-                <h2>Services to help your business grow</h2>
+                <h2>Servicios para impulsar el crecimiento de tu negocio</h2>
             </div>
             <Services />
         </Section>
 
         <Section>
-            <h2>Discover my latest works</h2>
+            <h2>Descubre mis últimos proyectos</h2>
 
             <div class="grid md:grid-cols-2 gap-10 mt-10">
                 {
@@ -117,17 +114,17 @@ const allWorks = await getCollection('works')
             <div
                 class="text-center flex items-center w-full mx-auto justify-center mt-16"
             >
-                <Link href="/works">View All Works</Link>
+                <Link href="/works">Ver todos los proyectos</Link>
             </div>
         </Section>
         <CtaHorizontalScroll />
-        <Section>
+        <!-- <Section>
             <div class="md:flex justify-between items-end max-w-">
                 <h2 class="md:max-w-screen-md mb-5 md:mb-0">
                     Sometimes, I also write and share some insights
                 </h2>
                 <ButtonLine href="/blog">View All Insights</ButtonLine>
             </div>
-        </Section>
+        </Section> -->
     </main>
 </Layout>

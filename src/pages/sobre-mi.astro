@@ -27,46 +27,50 @@ const EXPERIENCE = [
 
 const EDUCATION = [
     {
-        title: 'Visual Design',
+        title: 'Diseño Visual',
         university: 'Fundación Universitaria Panamericana',
         date: '2017 - 2020',
     },
     {
-        title: 'Technology in Graphic Design',
+        title: 'Tecnología en Diseño Gráfico',
         university:
             'Corporación Internacional para el Desarrollo Educativo - CIDE',
         date: '2011 - 2014',
     },
     {
-        title: 'Javascript Course',
+        title: 'Curso de Javascript ',
         university: 'Platzi',
         date: '2022',
     },
     {
-        title: 'Wordpress Development',
+        title: 'Curso de Desarrollo en Wordpress',
         university: 'Platzi',
         date: '2022',
     },
 ]
 ---
 
-<Layout title="About Me" description="test">
+<Layout
+    title="Sobre mí | Carlos Mancilla"
+    description="Como diseñador con más de 10 años de experiencia, me especializo en crear interfaces intuitivas y centradas en el usuario, así como en el desarrollo de sitios web, para una amplia gama de productos y experiencias digitales."
+>
     <Section>
         <div class="md:text-center md:max-w-screen-xl mx-auto">
             <h1 class="mb-8">
-                <spasn class="text-primary">About me</spasn>, a Visual Designer
-                living in Bogotá
+                <spasn class="text-primary">Acerca de mí</spasn>, un Diseñador
+                Visual viviendo en Bogotá
             </h1>
             <p class="text-2xl md:max-w-screen-md mx-auto">
-                As a Senior Designer with over 10 years of experience, I
-                specialize in creating intuitive and user-centered interfaces
-                for a wide range of digital products and experiences.
+                Como diseñador con más de 10 años de experiencia, me especializo
+                en crear interfaces intuitivas y centradas en el usuario, así
+                como en el desarrollo de sitios web, para una amplia gama de
+                productos y experiencias digitales.
             </p>
         </div>
     </Section>
     <Section>
         <div class="grid md:grid-cols-2 gap-12">
-            <h2>My past work experience</h2>
+            <h2>Mi experiencia laboral previa</h2>
             <div>
                 {
                     EXPERIENCE.map((exp) => {
@@ -89,7 +93,7 @@ const EDUCATION = [
     <Section
         class="bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(217,216,255,0.2),rgba(255,255,255,0.9))] dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.1),rgba(255,255,255,0))]"
     >
-        <h2 class="mb-16">My Education</h2>
+        <h2 class="mb-16">Mi Educación</h2>
         {
             EDUCATION.map((edu) => {
                 return (

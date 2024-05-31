@@ -9,17 +9,15 @@ const pathname = Astro.url.pathname
 <footer>
     <Section
         id="letsTalk"
-        class=`border-b border-slate-600 dark:border-slate-800 bg-slate-100 dark:bg-slate-900 ${pathname === '/contact' ? 'hidden' : ''} `
+        class=`border-b border-slate-600 dark:border-slate-800 bg-slate-100 dark:bg-slate-900 ${pathname === '/contacto' ? 'hidden' : ''} `
     >
         <div class="text-center justify-center items-center flex flex-col">
             <h2
                 class="md:max-w-screen-lg mb-8 text-slate-800 dark:text-slate-200"
             >
-                Want to create something <span class="text-primary"
-                    >awesome?</span
-                >
+                ¿Quieres crear algo <span class="text-primary">increíble?</span>
             </h2>
-            <Button href="/contact">Let's Talk</Button>
+            <Button href="/contacto">¡Conversemos!</Button>
         </div>
     </Section>
     <div class="bg-gray-950">
@@ -62,12 +60,12 @@ const pathname = Astro.url.pathname
             </div>
             <div class="h-[1px] bg-slate-200 my-4 opacity-30"></div>
             <p class="text-slate-200 text-2xl">
-                A Visual Designer and Developer living in Bogotá
+                Diseñador visual y desarrollador viviendo en Bogotá
             </p>
             <div
                 class="text-base mt-10 text-slate-200 opacity-50 font-light text-center"
             >
-                ©{new Date().getFullYear()}. Designed by <a
+                ©{new Date().getFullYear()}. Diseño por <a
                     href="/"
                     class="font-medium">Carlos Mancilla</a
                 >
